@@ -49,9 +49,20 @@
   width: 100%;
 }
 
+.App form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .radio-group {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   width: 100%;
+}
+
+.terms {
+  display: flex;
+  justify-content: space-between;
 }

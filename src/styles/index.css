@@ -75,6 +75,8 @@ button:focus-visible {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="number"],
 select {
   height: 48px;
   width: 100%;
