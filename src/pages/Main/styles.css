@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}

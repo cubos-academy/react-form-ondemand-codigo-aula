@@ -24,6 +24,7 @@ const allCoursesOptions = [
 function App() {
   const [inputName, setInputName] = useState("");
   const [selectCourses, setSelectCourses] = useState({ id: 0, name: "" });
+  const [radioPeriod, setRadioPeriod] = useState("morning");
 
   function handleSelectCourse(event: ChangeEvent<HTMLSelectElement>) {
     const currentSelectedCourse = allCoursesOptions.find(
@@ -33,6 +34,10 @@ function App() {
     if (!currentSelectedCourse) return;
 
     setSelectCourses(currentSelectedCourse);
+  }
+
+  function handleSelectRadio(event: ChangeEvent<HTMLInputElement>) {
+    setRadioPeriod(event.target.value);
   }
 
   return (
@@ -53,6 +58,40 @@ function App() {
           </option>
         ))}
       </select>
+
+      <h2>{radioPeriod}</h2>
+
+      <div className="radio-group">
+        <label>
+          <input
+            type="radio"
+            value="morning"
+            checked={radioPeriod === "morning"}
+            onChange={handleSelectRadio}
+          />
+          Manhã
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            value="afternoon"
+            checked={radioPeriod === "afternoon"}
+            onChange={handleSelectRadio}
+          />
+          Tarde
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            value="night"
+            checked={radioPeriod === "night"}
+            onChange={handleSelectRadio}
+          />
+          Noite
+        </label>
+      </div>
     </div>
   );
 }
